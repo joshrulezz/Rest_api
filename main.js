@@ -10,8 +10,6 @@ app.get('/' , (req , res) => {
 app.use("/movies" , movieRoutes);
 
 
-
-
 app.listen(PORT  , () => {
     console.log(`The server is running at http://127.0.0.1:${PORT}`);
 });

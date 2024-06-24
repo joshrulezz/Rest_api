@@ -1,23 +1,15 @@
 import express from "express";
+import { movieIndex , movieCreate , movieDelete , movieUpdate} from "../controllers/movies.controller.js";
 const router = express.Router();
 
 
 //CRUD FOR MOVIES 
 
-router.get("/" , (req , res) => {
-   res.send("sucess 200 !");
-})
+router.get("/" , movieIndex); // routing the incoming request to controller from this file !
 
-router.post("/" , (req , res) => {
-    res.send("Sucess for create using post !");
-})
+router.post("/" , movieCreate);
 
-router.put('/movies/:id' , () => {
-
-})
-
-router.delete('/movies/:id' , () => {
-
-})
+router.put('/:id' , movieUpdate);
+router.delete('/:id', movieDelete);
 
 export default router;
