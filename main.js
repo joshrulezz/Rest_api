@@ -1,12 +1,13 @@
 import express from "express";
 import movieRoutes from "./routes/movies.route.js";
+import connectDB from "./lib/db.js";
 const app = express();
 const PORT = 6969;
-app.get('/' , (req , res) => {
-    res.json({msg : "Hello Joshua!"});
-});
 
+// DATA UNDERSTANDING MIDDLEWARE..(understands the data sent from postman or frontend in terms of json)
+app.use(express.json());
 
+connectDB();
 app.use("/movies" , movieRoutes);
 
 
